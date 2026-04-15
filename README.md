@@ -22,8 +22,9 @@ Claude: [launches 5-phase workflow]
 
 ## Installation
 
-**Claude Code (plugin):**
+**Claude Code (plugin install — recommended):**
 ```bash
+# Add the marketplace, then install the plugin
 claude plugin marketplace add wan-huiyan/external-data-scout
 claude plugin install external-data-scout@wan-huiyan-external-data-scout
 ```
@@ -33,10 +34,14 @@ claude plugin install external-data-scout@wan-huiyan-external-data-scout
 git clone https://github.com/wan-huiyan/external-data-scout.git ~/.claude/skills/external-data-scout
 ```
 
-**Cursor (per-project rule):**
+**Cursor** (2.4+):
 ```bash
+# Per-project rule (most reliable)
 mkdir -p .cursor/rules
-# Copy SKILL.md content into .cursor/rules/external-data-scout.mdc with alwaysApply: true
+# Copy plugins/external-data-scout/SKILL.md content into .cursor/rules/external-data-scout.mdc with alwaysApply: true
+
+# Or via npx skills CLI
+npx skills add wan-huiyan/external-data-scout --global
 ```
 
 ## What You Get
