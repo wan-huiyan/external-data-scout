@@ -100,10 +100,12 @@ Synthesize all agent findings into a structured HTML report.
 3. Layer/tier architecture diagram (clickable, links to detail sections)
 4. Source detail sections (grouped by tier):
    For each source:
-   - Card with provider, access, frequency, lag, depth, licensing
+   - Card title + tier badge
+   - "What it is" — one-liner explaining the data source (lead with this!)
+   - "Why it matters" — how it helps the user's specific models/use cases
+   - Field grid with provider, access, frequency, lag, depth, licensing
    - Schema block with exact field names
    - Sample API response (JSON) or file structure
-   - "Why it matters" explanation
    - Footer tags (effort, status, licensing)
 5. Code snippets section (copy-paste Python for each source)
 6. Action items table (prioritised implementation roadmap)
@@ -201,7 +203,10 @@ enrichments the analyst enables when relevant.
 
 ## Source Card Template
 
-Each source card should follow this structure (adapt as needed):
+Each source card should follow this structure. **"What it is" and "Why it matters"
+lead the card** — readers need to understand what a source IS and why it's relevant
+before seeing endpoint URLs and field names. The field grid and schema are reference
+material that follows.
 
 ```html
 <div class="source-card" style="border-top: 3px solid [tier-color];">
@@ -212,20 +217,39 @@ Each source card should follow this structure (adapt as needed):
     </div>
     <span class="tier-badge">[TIER]</span>
   </div>
+  <div class="card-body">
+    <strong>What it is:</strong> [One-liner explaining the data source for someone
+    who has never heard of it. Factual, no jargon.]<br><br>
+    <strong>Why it matters:</strong> [How this source helps the user's specific
+    models. Name the model types explicitly (e.g., "In causal impact, it controls
+    for X. In MMM, it captures Y. In elasticity, it moderates Z.")]
+  </div>
   <div class="field-grid">
     [Key metadata: provider, endpoint, frequency, lag, depth, licensing]
   </div>
   <div class="schema-block">
     [Exact field names, data types, sample values]
   </div>
-  <div class="card-body">
-    [Why it matters for the use case]
-  </div>
   <div class="card-footer">
     [Effort badge] [License badge] [Other tags]
   </div>
 </div>
 ```
+
+**Card description guidelines:**
+
+- **"What it is"** should be understandable by someone who has never heard of the
+  source. "FRED is a free macroeconomic database maintained by the US Federal Reserve"
+  — not "FRED API series IDs for UK macro."
+- **"Why it matters"** should connect the source to the user's specific modelling
+  use cases, not just state generic economic facts. "In causal impact, CPI controls
+  for inflation that would otherwise inflate revenue estimates" — not "CPI measures
+  inflation."
+- For **licensed/gated platforms**, "What it is" should note the access model and
+  what's publicly known vs gated. "API docs are behind the customer portal at
+  help.sensortower.com" is useful context.
+- For **discontinued sources**, lead with a callout before the descriptions:
+  `<div class="callout" style="background: var(--red-bg);">Discontinued [date]...</div>`
 
 ## URL Verification Patterns (learned from v3 fact-check, April 2026)
 
