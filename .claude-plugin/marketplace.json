@@ -1,0 +1,12 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "wan-huiyan-external-data-scout",
+  "description": "Scout, document, and verify external data sources with field-level schemas and integration code.",
+  "owner": { "name": "Huiyan Wan" },
+  "plugins": [{
+    "name": "external-data-scout",
+    "source": "./plugins/external-data-scout",
+    "description": "5-phase workflow to discover, document, verify, and correct external data source reports.",
+    "version": "1.0.0"
+  }]
+}

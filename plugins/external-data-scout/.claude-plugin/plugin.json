@@ -1,0 +1,9 @@
+{
+  "name": "external-data-scout",
+  "description": "Scout, document, and verify external data sources with field-level schemas, API endpoints, and integration code.",
+  "version": "1.0.0",
+  "author": { "name": "Huiyan Wan" },
+  "repository": "https://github.com/wan-huiyan/external-data-scout",
+  "license": "MIT",
+  "keywords": ["data-sources", "api-documentation", "data-dictionary", "enrichment", "fact-check"]
+}
