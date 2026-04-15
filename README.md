@@ -102,8 +102,10 @@ The skill activates on phrases like:
 
 ## Related Skills
 
-- [**publish-skill**](https://github.com/wan-huiyan/publish-skill) — Publish any skill to GitHub as a polished repo
-- [**data-provenance-verifier**](https://github.com/wan-huiyan/data-provenance-verifier) — Verify that data files are genuine and have provenance docs
+- [**agent-review-panel**](https://github.com/wan-huiyan/agent-review-panel) — Multi-agent adversarial review. Used in Phase 4 to run parallel verification agents against live endpoints.
+- [**ai-trust-evaluation**](https://github.com/wan-huiyan/ai-trust-evaluation) — Evaluate trust and accuracy of AI-generated claims. Useful for scoring confidence in data source documentation.
+- [**data-provenance-verifier**](https://github.com/wan-huiyan/data-provenance-verifier) — Verify that data files are genuine and have provenance docs. Complements Phase 4 for file-based sources.
+- **frontend-design** / **theme-factory** — For building polished HTML reports in Phase 3 with consistent design systems.
 
 ## Version History
 
